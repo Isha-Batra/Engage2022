@@ -1,0 +1,82 @@
+
+{% extends 'proindex.html' %}
+{% block content %}
+    <h1 style=" font-family:Frank Ruhl Libre;
+    text-align:center;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-start;
+  background-color: rgb(241, 163, 163);; ">{% block title %} {% endblock %}</h1>
+    <div style="width: 120%; margin: 10px; margin-left: -20%;">
+        {% for comment in comments %}
+            <!-- {% if loop.index != 2 %}
+                <div style="padding: 10px;
+                            background-color: #EEE;
+                            margin: 20px">
+                    <p>#{{ loop.index }}</p>
+                    <p style="font-size: 25px">{{ comment | upper }}</p>
+                </div>
+            {% endif %} -->
+            <div style="padding: 10px; padding-bottom: 60px;
+                            background-color: rgb(247, 198, 158);
+                            margin: 20px;
+                            border-radius: 4%;">
+                    <p>#{{ loop.index }}</p>
+                    <p style="font-size: 25px;"> Rate: {{ comment | upper }}
+                        <br>
+                        <!-- Rate: {{ p | upper }} -->
+                        <br>
+                    </p>
+                </div>
+        {% endfor %}
+    </div>
+    <div style="width: 30%; margin-top: -68%; margin-left: -45%;">
+        {% for p in ps %}
+        <p style="font-size: 25px; padding-bottom: 80%;"> 
+            <br>
+            Price: {{ p | upper}}
+        </p>
+     {% endfor %}
+    </div>
+
+    <div style="width: 30%; margin-top: -70%; margin-left: -45%;">
+        {% for label in labels %}
+        <p style="font-size: 20px; padding-bottom: 85%;"> 
+            <br>
+           Brand: {{ label | upper}}
+            <br>
+        </p>
+     {% endfor %}
+     </div>
+
+    
+    
+    
+    <div style="width: 30%; margin-top: -72.5%; margin-left: -45%;">
+        {% for type in types %}
+        <p style="font-size: 15px; padding-bottom: 95.5%"> 
+            <br>
+           Type: {{ type | upper}}
+            <br>
+        </p>
+   
+     {% endfor %}
+    </div>
+
+    
+    <div style="width: 30%; margin-top: -93.5%; margin-left: -5%;">
+        <a href="https://www.sephora.com/product/facial-treatment-essence-P375849?icid2=products%20grid:p375849:">buy</a>
+        {% for link in links %}
+        <p style="font-size: 35px; padding-bottom: 60.5%"> 
+            <br>
+            <a href="http://www.google.com">Menu</a>
+            <a href= "{{ link }}" >BUY</a>
+           <!-- Type: {{ link | upper}} -->
+            <br>
+        </p>
+   
+     {% endfor %}
+    </div>
+
+    
+{% endblock %}
